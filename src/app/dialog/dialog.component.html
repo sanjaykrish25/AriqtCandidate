@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Add Candidate</h1>
+<div>
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input formControlName="Name"     matInput placeholder="Enter your Name">
+          </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Mobile No</mat-label>
+            <input formControlName="MobileNo"   matInput placeholder="Enter your Number">
+          </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>email id</mat-label>
+            <input formControlName="Emailid"  matInput placeholder="Enter your email id">
+          </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+          <mat-label>Designation</mat-label>
+        <mat-select formControlName="Designation"  placeholder="Enter Your Designation">
+            <mat-option value=".Net Developer">.Net Developer</mat-option>
+            <mat-option value="Angular Developer">Angular Developer</mat-option>
+            <mat-option value="Vue.js Developer">Vue.js Developer</mat-option>
+            <mat-option value="FullStack Developer">FullStack Developer</mat-option>
+            <mat-option value="DevOps">DevOps</mat-option>
+    
+        </mat-select>
+        </mat-form-field>  
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your date joining</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+    </form>
+
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" (click)="addproduct()">Save</button>
+
+</div>
